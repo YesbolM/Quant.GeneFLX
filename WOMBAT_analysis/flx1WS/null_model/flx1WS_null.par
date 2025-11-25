@@ -1,0 +1,52 @@
+RUNOP --pivot0.00001 --aireml30,0.01
+
+# WOMBAT Rep1FLX
+COMMENT bivariate WOMBAT analysis of WS from Rep1 FLX
+
+#MUltiVariate analysis with 2 traits
+ANALYSIS MUV 2
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS flx1WS_ped.PED
+
+# specify the data file and its layout
+DAT flx1WS_dat.dat GRP
+ TRNOS 1 2
+ TRAITNO 2
+ NAMES mWS fWS
+ ANIMAL 945
+ SEX 2
+ ROUND 4
+ NSEC 26
+  
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TRAIT mWS 1
+ TRAIT fWS 2
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the WOMBAT output for the model including the covariance (with the residual covariance set to the "small" value), since using the MCMCglmm estimates caused problems with convergence. The NSEC starting values are also increased by one order of magnitude.
+
+VAR ANIMAL 2 DIAG
+ 0.18273E-02
+ 0.25713E-02
+ 
+VAR RESIDUAL 2
+ 0.48570E-03
+ 0.00001
+ 0.19633E-03
+
+VAR NSEC 2
+ 0.17859E-03
+ -0.18927E-03  
+ 0.45584E-03 
+
+SPECIAL
+ FORCE-SE
+END
