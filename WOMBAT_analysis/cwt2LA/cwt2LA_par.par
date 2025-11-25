@@ -1,0 +1,51 @@
+# WOMBAT Rep2CWT
+COMMENT bivariate WOMBAT analysis of LA from Rep2 CWT
+
+#MUltiVariate analysis with 2 traits
+ANALYSIS MUV 2
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cwt2LA_ped.PED
+
+# specify the data file and its layout
+DAT cwt2LA_dat.dat GRP
+ TRNOS 1 2
+ TRAITNO 2
+ NAMES mLA fLA
+ ANIMAL 950
+ SEX 2
+ ROUND 4
+ NSEC 26
+  
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TRAIT mLA 1
+ TRAIT fLA 2
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR ANIMAL 2
+ 0.952931132
+ 0.575690348 
+ 0.602646934 
+ 
+VAR RESIDUAL 2
+ 0.007367713
+ 0.298059765
+ 0.560551775
+
+VAR NSEC 2
+ 0.005058656 
+ 0.105894886 
+ 0.226650751 
+
+SPECIAL
+ FORCE-SE
+END
