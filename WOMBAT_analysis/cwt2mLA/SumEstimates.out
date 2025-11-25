@@ -1,0 +1,76 @@
+======= Version 03-11-2023 ======================================= **KM** ====
+
+        Program WOMBAT: Estimates of covariance components
+==============================================================================
+
+ WOMBAT analysis of  Rep2CWT male LA                                        
+
+ Analysis type          :   "UNI"
+ Data file              :   "cwt2mLA_dat.dat"
+ Pedigree file          :   "ReducedPedFile.dat"
+ Parameter file         :   "cwt2mLA_par.par"
+  
+ No. of traits          =      1                    LA
+ No. of records         =    499           499
+ No. of parameters      =      3
+ Maximum log L          =          -663.357
+ -1/2 AIC & AICC        =          -666.357          -666.381
+ -1/2 BIC               =          -672.664    "Penalty factor" =   3.102
+  
+ Operational zero used  =     0.00000001000
+ Value for "small"      =     0.00010000000
+ Limit: "small" pivots  =     0.00100000000
+  
+ Eigenvalues of AI matrix
+    575.273        17.9187        4.62845    
+
+ Parameter estimates with approx. sampling erors
+   1   CHOL Z 1 1             0.641903          0.755251E-01          
+   2   CHOL A 1 1              1.27588          0.258340              
+   3   CHOL B 1 1            -0.642803          0.448505              
+
+ Convergence criteria for last 3 iterates
+ Change in log likelihood    =    0.156986    0.002290    0.000037
+ Change in parameter vector  =    0.167982    0.013435    0.002314
+ Norm of gradient vector     =      2.4108      0.2719      0.0378
+ Newton decrement            =     -0.2785     -0.0044     -0.0001
+
+***** Estimates of residual covariances   ************************************
+      Order of fit           =       1
+ Covariance matrix
+   1     3.6104    
+ Matrix of correlations and variance ratios
+   1      0.6547
+ Covariances & correlations with approximate sampling errors
+   1  COVS Z 1 1        3.61035       0.545344       vrat     0.655   0.101
+
+***** Estimates for RE  1   "ANIMAL"   ***************************************
+      No. of levels          =     732
+      Covariance structure   = NRM
+      Order of fit           =       1
+ Covariance matrix
+   1     1.6279    
+ Matrix of correlations and variance ratios
+   1      0.2952
+ Covariances & correlations with approximate sampling errors
+   2  COVS A 1 1        1.62787       0.659222       vrat     0.295   0.115
+
+***** Estimates for RE  2   "NSEC"   *****************************************
+      No. of levels          =      26
+      Covariance structure   = IDE
+      Order of fit           =       1
+ Covariance matrix
+   1    0.27648    
+ Matrix of correlations and variance ratios
+   1      0.0501
+ Covariances & correlations with approximate sampling errors
+   3  COVS B 1 1       0.276483       0.248008       vrat     0.050   0.044
+
+***** Estimates of phenotypic covariances  ***********************************
+ Covariance matrix
+   1     5.5147    
+ Covariances & correlations with approximate sampling errors
+   4  COVS T 1 1        5.51470       0.388773    
+  
+======== end of file ============================23-06-2025==========14:21====
+  
