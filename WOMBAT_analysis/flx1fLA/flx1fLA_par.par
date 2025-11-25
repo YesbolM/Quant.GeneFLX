@@ -1,0 +1,40 @@
+# WOMBAT Rep1FLX female LA
+COMMENT WOMBAT analysis of  Rep1FLX female LA
+
+#univaraite model with Rep1FLX female LA
+ANALYSIS UNI
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS flx1fLA_ped.PED
+
+# specify the data file and its layout
+DAT flx1fLA_dat.dat
+ ANIMAL
+ LA
+ ROUND 4
+ NSEC 26
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TR LA
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR ANIMAL 1
+0.004430139
+
+VAR RESIDUAL 1
+0.710829756
+
+VAR NSEC 1
+0.002441968
+ 
+SPECIAL
+ FORCE-SE
+END
