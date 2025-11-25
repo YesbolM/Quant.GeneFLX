@@ -1,0 +1,42 @@
+RUNOP --nostrict
+
+# WOMBAT Rep2FLX male WS
+COMMENT WOMBAT analysis of  Rep2FLX male WS
+
+#univaraite model with Rep2FLX male WS
+ANALYSIS UNI
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS flx2mWS_ped.PED
+
+# specify the data file and its layout
+DAT flx2mWS_dat.dat
+ ANIMAL
+ WS
+ ROUND 4
+ NSEC 26
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TR WS
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR ANIMAL 1
+0.0021260612
+
+VAR RESIDUAL 1
+0.0005141685
+
+VAR NSEC 1
+0.0002274540
+ 
+SPECIAL
+ FORCE-SE
+END
