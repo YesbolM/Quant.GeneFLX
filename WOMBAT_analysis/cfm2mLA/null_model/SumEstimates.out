@@ -1,0 +1,64 @@
+======= Version 03-11-2023 ======================================= **KM** ====
+
+        Program WOMBAT: Estimates of covariance components
+==============================================================================
+
+ WOMBAT analysis of  Rep2CFM male LA, null model                            
+
+ Analysis type          :   "UNI"
+ Data file              :   "cfm2mLA_dat.dat"
+ Pedigree file          :   "ReducedPedFile.dat"
+ Parameter file         :   "cfm2mLA_null.par"
+  
+ No. of traits          =      1                    LA
+ No. of records         =    506           506
+ No. of parameters      =      2
+ Maximum log L          =          -845.985
+ -1/2 AIC & AICC        =          -847.985          -847.997
+ -1/2 BIC               =          -852.204    "Penalty factor" =   3.109
+  
+ Operational zero used  =     0.00000001000
+ Value for "small"      =     0.00010000000
+ Limit: "small" pivots  =     0.00100000000
+  
+ Eigenvalues of AI matrix
+    98.0853        19.2454    
+
+ Parameter estimates with approx. sampling erors
+   1   CHOL Z 1 1              3.14059          0.101372              
+   2   CHOL A 1 1             0.947314          0.227770              
+
+ Convergence criteria for last 3 iterates
+ Change in log likelihood    =    7.778584    0.186557    0.000149
+ Change in parameter vector  =    0.094149    0.018289    0.000541
+ Norm of gradient vector     =     48.5388      6.2311      0.1704
+ Newton decrement            =    -14.7258     -0.3687     -0.0003
+
+***** Estimates of residual covariances   ************************************
+      Order of fit           =       1
+ Covariance matrix
+   1     9.8633    
+ Matrix of correlations and variance ratios
+   1      0.9166
+ Covariances & correlations with approximate sampling errors
+   1  COVS Z 1 1        9.86329       0.636738       vrat     0.917   0.037
+
+***** Estimates for RE  1   "NSEC"   *****************************************
+      No. of levels          =      27
+      Covariance structure   = NRM
+      Order of fit           =       1
+ Covariance matrix
+   1    0.89740    
+ Matrix of correlations and variance ratios
+   1      0.0834
+ Covariances & correlations with approximate sampling errors
+   2  COVS A 1 1       0.897405       0.431540       vrat     0.083   0.037
+
+***** Estimates of phenotypic covariances  ***********************************
+ Covariance matrix
+   1     10.761    
+ Covariances & correlations with approximate sampling errors
+   3  COVS T 1 1        10.7607       0.740191    
+  
+======== end of file ============================23-06-2025==========13:27====
+  
