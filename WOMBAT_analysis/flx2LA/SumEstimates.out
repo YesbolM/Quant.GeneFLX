@@ -1,0 +1,117 @@
+======= Version 03-11-2023 ======================================= **KM** ====
+
+        Program WOMBAT: Estimates of covariance components
+==============================================================================
+
+ bivariate WOMBAT analysis of LA from Rep2 FLX                              
+
+ Analysis type          :   "MUV 2"
+ Data file              :   "flx2LA_dat.dat"
+ Pedigree file          :   "ReducedPedFile.dat"
+ Parameter file         :   "flx2LA_par.par"
+  
+ No. of traits          =      2                   mLA                 fLA
+ No. of records         =    954           493         461
+ No. of parameters      =      9
+   ... not estimated    =      1
+ Maximum log L          =         -1399.921
+ -1/2 AIC & AICC        =         -1407.921         -1407.997
+ -1/2 BIC               =         -1427.330    "Penalty factor" =   3.426
+  
+ Operational zero used  =     0.00000001000
+ Value for "small"      =     0.00010000000
+ Limit: "small" pivots  =     0.00100000000
+  
+ Eigenvalues of AI matrix
+    172.260        112.765        27.4006        20.0862        8.63690        6.87091        3.58584       0.770534    
+   -0.00000    
+
+ Parameter estimates with approx. sampling erors
+   1   CHOL Z 1 1              2.11697          0.126928              
+   2   CHOL Z 1 2              0.00000           1000.00              
+   3   CHOL Z 2 2              2.86619          0.147327              
+   4   CHOL A 1 1             0.845068          0.317712              
+   5   CHOL A 1 2             0.180647          0.494989              
+   6   CHOL A 2 2             0.331987           1.12959              
+   7   CHOL B 1 1             0.445301          0.205417              
+   8   CHOL B 1 2             0.793865E-01      0.428860              
+   9   CHOL B 2 2             0.854545          0.230417              
+
+ Convergence criteria for last 3 iterates
+ Change in log likelihood    =    0.070126    0.002330    0.000013
+ Change in parameter vector  =    0.049571    0.011604    0.000921
+ Norm of gradient vector     =      2.8464      0.5332      0.0326
+ Newton decrement            =     -0.1430     -0.0046     -0.0000
+
+***** Estimates of residual covariances   ************************************
+      Order of fit           =       2
+ Covariance matrix
+   1     8.2151    
+   2     0.0000       4.4816    
+ Eigenvalues of covariance matrix
+ Value         8.22         4.48
+   (%)        64.70        35.30
+ Trace        12.70
+ Matrix of correlations and variance ratios
+   1      0.9033
+   2      0.0000    0.8308
+ Covariances & correlations with approximate sampling errors
+   1  COVS Z 1 1        8.21507       0.844539       vrat     0.903   0.081
+   3  COVS Z 2 2        4.48158       0.537407       vrat     0.831   0.092
+
+***** Estimates for RE  1   "ANIMAL"   ***************************************
+      No. of levels          =    1189
+      Covariance structure   = NRM
+      Order of fit           =       2
+ Covariance matrix
+   1    0.14285    
+   2    0.15266      0.71414    
+ Eigenvalues of covariance matrix
+ Value         0.75         0.10
+   (%)        87.79        12.21
+ Trace         0.86
+ Matrix of correlations and variance ratios
+   1      0.0157
+   2      0.4780    0.1324
+ Covariances & correlations with approximate sampling errors
+   4  COVS A 1 1       0.142849       0.744552       vrat     0.016   0.082
+   5  COVS A 1 2       0.152659       0.419527       corr     0.478  failed
+   6  COVS A 2 2       0.714140       0.536977       vrat     0.132   0.098
+
+***** Estimates for RE  2   "NSEC"   *****************************************
+      No. of levels          =      26
+      Covariance structure   = IDE
+      Order of fit           =       2
+ Covariance matrix
+   1    0.73655    
+   2    0.35351E-01  0.19829    
+ Eigenvalues of covariance matrix
+ Value         0.74         0.20
+   (%)        79.04        20.96
+ Trace         0.93
+ Matrix of correlations and variance ratios
+   1      0.0810
+   2      0.0925    0.0368
+ Covariances & correlations with approximate sampling errors
+   7  COVS B 1 1       0.736550       0.395251       vrat     0.081   0.041
+   8  COVS B 1 2       0.353509E-01   0.191972       corr     0.093   0.498
+   9  COVS B 2 2       0.198293       0.182945       vrat     0.037   0.033
+
+***** Estimates of phenotypic covariances  ***********************************
+ Covariance matrix
+   1     9.0945    
+   2    0.18801       5.3940    
+ Eigenvalues of covariance matrix
+ Value         9.10         5.38
+   (%)        62.84        37.16
+ Trace        14.49
+ Correlation matrix
+   1      1.0000
+   2      0.0268    1.0000
+ Covariances & correlations with approximate sampling errors
+  10  COVS T 1 1        9.09447       0.637589    
+  11  COVS T 1 2       0.188010       0.406852       corr     0.027   0.058
+  12  COVS T 2 2        5.39401       0.371805    
+  
+======== end of file ============================25-06-2025==========17:43====
+  
