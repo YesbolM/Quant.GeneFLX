@@ -1,0 +1,112 @@
+RUNOP --aireml100,0.2 --pivot0.00001 --nostrict --modaim3
+
+# WOMBAT Rep2CWT
+COMMENT WOMBAT analysis of all six traits together from Rep2 CWT, 
+
+#MUltiVariate analysis with 6 traits
+ANALYSIS MUV 6
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cwt2_ped.ped
+
+
+# specify the data file and its layout
+DAT cwt2_dat.dat GRP
+ TRNOS 1 2 3 4 5 6
+ TRAITNO 6
+ NAMES mWS mDR mLA fWS fDR fLA
+ ANIMAL 950
+ SEX 2
+ ROUND 4
+ NSEC 26
+ 
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TRAIT mWS 1
+ TRAIT mDR 2
+ TRAIT mLA 3
+ TRAIT fWS 4
+ TRAIT fDR 5
+ TRAIT fLA 6
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR ANIMAL 6
+0.0015520546                               
+0.0007655915 
+0.0045973883                               
+0.0008979807 
+-0.0017876461                              
+-0.0011861102 
+0.0473277903                              
+-0.0077838942 
+0.0017520805                               
+0.0484448274 
+-0.0425454541                               
+0.1864862481 
+0.0038963738                              
+-0.0230731653 
+0.1018426593                               
+0.0015680607 
+0.0032564412                              
+-0.0014341119 
+0.0850614451                              
+-0.0316081403 
+0.0727359100 
+
+VAR RESIDUAL 6
+3.846099e-04                              
+1.424101e-04 
+-1.490724e-03                             
+-1.241547e-05 
+-7.219962e-04                              
+1.481181e-03 
+1.132006e-01                              
+9.829397e-03 
+6.008595e-04                              
+7.089292e-02 
+1.365599e-01                              
+4.662575e-01 
+-8.460435e-04                              
+1.497366e-02 
+-5.247137e-01                              
+2.897487e-04 
+-3.571012e-04                              
+6.938585e-04 
+9.193411e-02                             
+-3.512146e-03 
+8.214362e-01  
+
+VAR NSEC 6
+5.341646e-04                               
+-6.186609e-04 
+3.767749e-03                               
+-1.018960e-04 
+-6.130743e-05                                
+3.718164e-03 
+1.455358e-02                                
+3.546568e-03 
+-3.725988e-04                                
+7.457031e-04 
+-1.086728e-02                                
+5.738630e-02 
+-1.921569e-03                               
+-1.008954e-03 
+7.705456e-02                                
+4.406747e-04 
+5.620309e-05                               
+-1.918620e-03 
+4.836603e-03                                
+9.233851e-03 
+2.561160e-01 
+
+SPECIAL
+ FORCE-SE
+END
