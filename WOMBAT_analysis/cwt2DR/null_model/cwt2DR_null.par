@@ -1,0 +1,52 @@
+RUNOP --aireml30,0.001
+
+# WOMBAT Rep2CWT
+COMMENT bivariate WOMBAT analysis of DR from Rep2 CWT null model
+
+#MUltiVariate analysis with 2 traits
+ANALYSIS MUV 2
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cwt2DR_ped.PED
+
+# specify the data file and its layout
+DAT cwt2DR_dat.dat GRP
+ TRNOS 1 2
+ TRAITNO 2
+ NAMES mDR fDR
+ ANIMAL 950
+ SEX 2
+ ROUND 4
+ NSEC 26
+  
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TRAIT mDR 1
+ TRAIT fDR 2
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR ANIMAL 2 DIAG
+ 1.19553706
+ 10.07541403
+ 
+VAR RESIDUAL 2
+ 3.91545858
+ -7.71844283
+ 13.44201673
+
+VAR NSEC 2
+ 0.35024075
+ -0.17989448
+ 0.01787834
+
+SPECIAL
+ FORCE-SE
+END
