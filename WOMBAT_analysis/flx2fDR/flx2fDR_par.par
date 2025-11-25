@@ -1,0 +1,43 @@
+RUNOP --aireml
+
+# WOMBAT Rep2FLX female DR
+COMMENT WOMBAT analysis of  Rep2FLX female DR
+
+#univaraite model with Rep2FLX female DR
+ANALYSIS UNI
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS flx2fDR_ped.PED
+
+# specify the data file and its layout
+DAT flx2fDR_dat.dat
+ ANIMAL
+ DR
+ ROUND 4
+ NSEC 26
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TR DR
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm for ANIMAL and RESIDUAL.
+# Using the MCMCglmm point estimate for NSEC (0.008632748) resulted in convergence problems even when using --nostrict and --aireml, so I increased it by two orders of magnitude instead.
+
+VAR ANIMAL 1
+12.022907270
+
+VAR RESIDUAL 1
+10.596719744
+
+VAR NSEC 1
+0.8632748
+
+SPECIAL
+ FORCE-SE
+END
