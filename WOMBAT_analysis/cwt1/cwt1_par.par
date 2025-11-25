@@ -1,0 +1,112 @@
+RUNOP --aireml30,0.01 --pivot0.00001
+
+# WOMBAT Rep1CWT
+COMMENT WOMBAT analysis of all six traits together from Rep1 CWT, 
+
+#MUltiVariate analysis with 6 traits
+ANALYSIS MUV 6
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cwt1_ped.ped
+
+
+# specify the data file and its layout
+DAT cwt1_dat.dat GRP
+ TRNOS 1 2 3 4 5 6
+ TRAITNO 6
+ NAMES mWS mDR mLA fWS fDR fLA
+ ANIMAL 914
+ SEX 2
+ ROUND 4
+ NSEC 28
+ 
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TRAIT mWS 1
+ TRAIT mDR 2
+ TRAIT mLA 3
+ TRAIT fWS 4
+ TRAIT fDR 5
+ TRAIT fLA 6
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR ANIMAL 6
+0.0010135619                               
+0.0017243495 
+0.0062189367                               
+0.0007081119 
+0.0014235847                               
+0.0070785664 
+0.0780701071                              
+-0.0636919679 
+0.0020567686                               
+0.0766817182 
+-0.0119690798                               
+0.4604724963 
+0.0077738434                              
+-0.0481697554 
+0.3800519872                               
+0.0008778647 
+0.0015773463                               
+0.0077539090 
+0.0856468329                               
+0.0407111088 
+0.5826502884
+
+VAR RESIDUAL 6
+4.011628e-04                             
+-9.543139e-04 
+-2.186521e-03                              
+1.594795e-05 
+8.540481e-04                              
+1.482159e-03 
+7.403146e-02                              
+6.884633e-02 
+-7.676350e-04                              
+7.719561e-02 
+1.924053e-01                              
+9.682296e-01 
+-1.238393e-03                              
+9.282551e-02 
+1.153693e+00                              
+4.266777e-04 
+8.872743e-04                             
+-3.075394e-03 
+8.432051e-02                             
+-1.090081e-02 
+1.653955e+00
+
+VAR NSEC 6
+4.382112e-04                               
+-1.529295e-04 
+-2.207460e-04                                
+1.328045e-04 
+-2.223878e-05                               
+-1.057756e-04 
+3.430672e-02                                
+1.126425e-02 
+-9.949411e-05                                
+2.140604e-02 
+-2.584849e-03                                
+1.003059e-02 
+-2.897188e-04                                
+2.939581e-04 
+2.810117e-03                                
+4.696593e-04 
+-1.311094e-04                               
+-2.665869e-05 
+1.922956e-02                                
+2.481056e-03 
+1.019808e-02 
+
+SPECIAL
+ FORCE-SE
+END
