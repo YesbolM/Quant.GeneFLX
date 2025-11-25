@@ -1,0 +1,36 @@
+# WOMBAT Rep2CWT male DR
+COMMENT WOMBAT analysis of  Rep2CWT male DR, null model
+
+#univaraite model with Rep2CWT male DR
+ANALYSIS UNI
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cwt2mDR_ped.PED
+
+# specify the data file and its layout
+DAT cwt2mDR_dat.dat
+ ANIMAL
+ DR
+ ROUND 4
+ NSEC 26
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN NSEC NRM
+ TR DR
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm model for RESIDUAL, but using the MCMCglmm value for NSEC (0.01114971) caused problems with convergence even when using --nostrict and --aireml, so I therefore increased the value by two orders of magnitude
+
+VAR RESIDUAL 1
+3.25290647
+
+VAR NSEC 1
+1.114971
+
+SPECIAL
+ FORCE-SE
+END
