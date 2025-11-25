@@ -1,0 +1,40 @@
+# WOMBAT Rep1CFM female DR
+COMMENT WOMBAT analysis of  Rep1CFM male DR
+
+#univaraite model with Rep1CFM male DR
+ANALYSIS UNI
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cfm1mDR_ped.PED
+
+# specify the data file and its layout
+DAT cfm1mDR_dat.dat
+ ANIMAL
+ DR
+ ROUND 4
+ NSEC 27
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TR DR
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR ANIMAL 1
+2.28341899
+
+VAR RESIDUAL 1
+1.59089363
+
+VAR NSEC 1
+0.01101003
+
+SPECIAL
+ FORCE-SE
+END
