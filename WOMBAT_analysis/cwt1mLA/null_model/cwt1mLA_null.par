@@ -1,0 +1,36 @@
+# WOMBAT Rep1CWT male LA
+COMMENT WOMBAT analysis of  Rep1CWT male LA, null model
+
+#univaraite model with Rep1CWT male LA
+ANALYSIS UNI
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cwt1mLA_ped.PED
+
+# specify the data file and its layout
+DAT cwt1mLA_dat.dat
+ ANIMAL
+ LA
+ ROUND 4
+ NSEC 28
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN NSEC NRM
+ TR LA
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR RESIDUAL 1
+0.522494996
+
+VAR NSEC 1
+0.001570885
+
+SPECIAL
+ FORCE-SE
+END
