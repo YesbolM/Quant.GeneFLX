@@ -1,0 +1,42 @@
+RUNOP --nostrict
+
+# WOMBAT Rep2CFM male wing length
+COMMENT WOMBAT analysis of  Rep2CFM male wing length,
+
+#univaraite model with Rep2CFM male wing length
+ANALYSIS UNI
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cfm2mWS_ped.PED
+
+# specify the data file and its layout
+DAT cfm2mWS_dat.dat
+ ANIMAL
+ WL
+ ROUND 4
+ NSEC 27
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND 
+ RAN ANIMAL NRM
+ RAN NSEC
+ TR WL
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR ANIMAL 1
+0.0018622586
+
+VAR RESIDUAL 1
+0.0010363658
+
+VAR NSEC 1
+0.0003164373
+
+SPECIAL
+ FORCE-SE
+END
