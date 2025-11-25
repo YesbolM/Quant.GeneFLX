@@ -1,0 +1,93 @@
+======= Version 03-11-2023 ======================================= **KM** ====
+
+        Program WOMBAT: Estimates of covariance components
+==============================================================================
+
+ bivariate WOMBAT analysis of WS from Rep1 CFM null model                   
+
+ Analysis type          :   "MUV 2"
+ Data file              :   "cfm1WS_dat.dat"
+ Pedigree file          :   "ReducedPedFile.dat"
+ Parameter file         :   "cfm1WS_null.par"
+  
+ No. of traits          =      2                   mWS                 fWS
+ No. of records         =    947           493         454
+ No. of parameters      =      8
+   ... not estimated    =      1
+ Maximum log L          =          2340.809
+ -1/2 AIC & AICC        =          2333.809          2333.749
+ -1/2 BIC               =          2316.852    "Penalty factor" =   3.422
+  
+ Operational zero used  =     0.00000001000
+ Value for "small"      =     0.00010000000
+ Limit: "small" pivots  =     0.00001000000
+  
+
+ Parameter estimates
+   1   CHOL Z 1 1             0.996887E-03          
+   3   CHOL Z 2 2             0.947527E-03          
+   4   CHOL A 1 1             0.156115E-02          
+   5   CHOL A 2 2             0.197713E-02          
+   6   CHOL B 1 1             0.110275E-04          
+   7   CHOL B 1 2             0.176266E-04          
+   8   CHOL B 2 2             0.381749E-04          
+
+ Convergence criteria for last 3 iterates
+ Change in log likelihood    =    0.067928************    0.000145
+ Change in parameter vector  =    0.002963    0.971992    0.000419
+ Norm of gradient vector     =     96.8492     96.8492     86.2160
+ Newton decrement            =    -15.7753    -15.7753    -16.9864
+
+***** Estimates of residual covariances   ************************************
+      Order of fit           =       2
+ Covariance matrix
+   1    0.99689E-03
+   2     0.0000      0.94753E-03
+ Eigenvalues of covariance matrix
+ Value         0.00         0.00
+   (%)        51.27        48.73
+ Trace         0.00
+ Matrix of correlations and variance ratios
+   1      0.3880
+   2      0.0000    0.3198
+
+***** Estimates for RE  1   "ANIMAL"   ***************************************
+      No. of levels          =    1182
+      Covariance structure   = NRM
+      Order of fit           =       2
+ Variance components
+   1    0.15612E-02
+   2    0.19771E-02
+ Variance ratios
+   1      0.6077
+   2      0.6673
+
+***** Estimates for RE  2   "NSEC"   *****************************************
+      No. of levels          =      27
+      Covariance structure   = IDE
+      Order of fit           =       2
+ Covariance matrix
+   1    0.11027E-04
+   2    0.17627E-04  0.38175E-04
+ Eigenvalues of covariance matrix
+ Value         0.00         0.00
+   (%)        95.22         4.78
+ Trace         0.00
+ Matrix of correlations and variance ratios
+   1      0.0043
+   2      0.8591    0.0129
+
+***** Estimates of phenotypic covariances  ***********************************
+ Covariance matrix
+   1    0.25691E-02
+   2    0.17627E-04  0.29628E-02
+ Eigenvalues of covariance matrix
+ Value         0.00         0.00
+   (%)        53.57        46.43
+ Trace         0.01
+ Correlation matrix
+   1      1.0000
+   2      0.0064    1.0000
+  
+======== end of file ============================24-06-2025==========17:04====
+  
