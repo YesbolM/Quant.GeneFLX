@@ -1,0 +1,52 @@
+RUNOP --nostrict --aireml30,0.001
+
+# WOMBAT Rep1CFM
+COMMENT bivariate WOMBAT analysis of LA from Rep1 CFM null model
+
+#MUltiVariate analysis with 2 traits
+ANALYSIS MUV 2
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cfm1LA_ped.PED
+
+# specify the data file and its layout
+DAT cfm1LA_dat.dat GRP
+ TRNOS 1 2
+ TRAITNO 2
+ NAMES mLA fLA
+ ANIMAL 947
+ SEX 2
+ ROUND 4
+ NSEC 27
+  
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TRAIT mLA 1
+ TRAIT fLA 2
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR ANIMAL 2 DIAG
+ 0.805625352
+ 0.136327939  
+ 
+VAR RESIDUAL 2
+ 0.549776963
+ 0.855796635
+ 1.429147100
+
+VAR NSEC 2
+ 0.003002279
+ -0.000374850
+ 0.003348680 
+
+SPECIAL
+ FORCE-SE
+END
