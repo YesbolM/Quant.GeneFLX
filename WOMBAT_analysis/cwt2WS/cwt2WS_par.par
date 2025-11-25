@@ -1,0 +1,53 @@
+RUNOP --pivot0.00001 --nostrict
+
+# WOMBAT Rep2CWT
+COMMENT bivariate WOMBAT analysis of WS from Rep2 CWT
+
+#MUltiVariate analysis with 2 traits
+ANALYSIS MUV 2
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cwt2WS_ped.PED
+
+# specify the data file and its layout
+DAT cwt2WS_dat.dat GRP
+ TRNOS 1 2
+ TRAITNO 2
+ NAMES mWS fWS
+ ANIMAL 950
+ SEX 2
+ ROUND 4
+ NSEC 26
+  
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TRAIT mWS 1
+ TRAIT fWS 2
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm
+
+VAR ANIMAL 2
+ 2.801250e-03 
+ 2.169691e-03
+ 3.374578e-03
+ 
+VAR RESIDUAL 2
+ 5.529878e-04
+ 5.349630e-06
+ 9.166396e-04
+
+VAR NSEC 2
+ 6.967135e-04
+ -1.592182e-04                
+ 6.210159e-04
+
+SPECIAL
+ FORCE-SE
+END
