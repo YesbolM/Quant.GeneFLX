@@ -1,0 +1,41 @@
+# WOMBAT Rep2FLX female LA
+COMMENT WOMBAT analysis of  Rep2FLX female LA
+
+#univaraite model with Rep2FLX female LA
+ANALYSIS UNI
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS flx2fLA_ped.PED
+
+# specify the data file and its layout
+DAT flx2fLA_dat.dat
+ ANIMAL
+ LA
+ ROUND 4
+ NSEC 26
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TR LA
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the MCMCglmm for NSEC and RESIDUAL.
+# Using the MCMCglmm point estimate for ANIMAL (0.005146827) resulted in convergence problems even when using --nostrict and --aireml, so I increased it by two orders of magnitude instead.
+
+VAR ANIMAL 1
+0.5146827
+
+VAR RESIDUAL 1
+1.302812989
+
+VAR NSEC 1
+0.160110421
+ 
+SPECIAL
+ FORCE-SE
+END
