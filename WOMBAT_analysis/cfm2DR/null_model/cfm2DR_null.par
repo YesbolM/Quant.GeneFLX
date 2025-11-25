@@ -1,0 +1,52 @@
+RUNOP --emai10,30,0.1
+
+# WOMBAT Rep2CFM
+COMMENT bivariate WOMBAT analysis of DR from Rep2 CFM null model
+
+#MUltiVariate analysis with 2 traits
+ANALYSIS MUV 2
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cfm2DR_ped.PED
+
+# specify the data file and its layout
+DAT cfm2DR_dat.dat GRP
+ TRNOS 1 2
+ TRAITNO 2
+ NAMES mDR fDR
+ ANIMAL 953
+ SEX 2
+ ROUND 4
+ NSEC 27
+  
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN ANIMAL NRM
+ RAN NSEC
+ TRAIT mDR 1
+ TRAIT fDR 2
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the WOMBAT model including the covariance since using the MCMglmm estimates caused issues with covergence.
+
+VAR ANIMAL 2 DIAG
+ 1.1551    
+ 6.5300
+ 
+VAR RESIDUAL 2
+ 2.0303    
+ 0.00001
+ 17.472
+
+VAR NSEC 2
+ 0.17147    
+ 0.46410       
+ 1.2635
+
+SPECIAL
+ FORCE-SE
+END
