@@ -1,0 +1,36 @@
+# WOMBAT Rep2CWT female LA
+COMMENT WOMBAT analysis of  Rep2CWT female LA, null model
+
+#univaraite model with Rep2CWT female LA
+ANALYSIS UNI
+
+# specify the pedigree file to be used (Name the pedigree file)
+PEDS cwt2fLA_ped.ped
+
+# specify the data file and its layout
+DAT cwt2fLA_dat.dat
+ ANIMAL
+ LA
+ ROUND 4
+ NSEC 26
+END DATA
+
+# specify the model to be fitted
+MODEL
+ FIX ROUND
+ RAN NSEC NRM
+ TR LA
+END MODEL
+
+# Specify starting values and the number of rows and columns in the matrix
+# Here I used point estimates from the WOMBAT analysis including the effect of ANIMAL
+
+VAR RESIDUAL 1
+0.5356234
+
+VAR NSEC 1
+0.294866254
+ 
+SPECIAL
+ FORCE-SE
+END
